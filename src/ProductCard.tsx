@@ -1,8 +1,13 @@
 import { StyleSheet, Text, Pressable ,Image,View} from 'react-native'
 import React from 'react'
+import { ProductType } from './types/productType'
 
+export interface props{
+  product:ProductType,
+  onPress:() => void
+}
 
-const ProductCard = ({product,onPress}) => {
+const ProductCard = ({product,onPress}:props) => {
   return (
     <Pressable style={styles.container} onPress={onPress}>
       <Image source={{uri:product.image}} style={styles.image}></Image>
